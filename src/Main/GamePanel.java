@@ -266,19 +266,21 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			/* Finish things up. */
 			g.setColor(Color.WHITE);
 			g.fillRect(0, 0, 100, 10);
-			g.fillRect(0, 10, 40, 10);
-			g.fillRect(0, 20, 80, 10);
-			g.fillRect(0, 30, 110, 10);
-			g.fillRect(0, 40, 80, 10);
+			g.fillRect(0, 10, 190, 10);
+			g.fillRect(0, 20, 40, 10);
+			g.fillRect(0, 30, 80, 10);
+			g.fillRect(0, 40, 110, 10);
+			g.fillRect(0, 50, 80, 10);
 			g.fillRect(0, HEIGHT-10, 280, 10);
 			g.setColor(Color.BLACK);
 			Font font = g.getFont();
 			g.setFont(font.deriveFont(10.0f));
 			g.drawString("Mines Destroyed: " + minesDestroyed, 0, 9);
-			g.drawString("cGen: " + con.cGen, 0, 19);
-			g.drawString("Overhead: " + (int)(elapsed / 1000000), 0, 29);
-			g.drawString("Run. Avg. Overhead: " + avgElapsed, 0, 39);
-			g.drawString("Target Time: " + targetTime, 0, 49);
+			g.drawString("Last Generation Average Fitness: " + (Math.round(con.getAverageFitness()*100.0)/100.0), 0, 19);
+			g.drawString("cGen: " + con.cGen, 0, 29);
+			g.drawString("Overhead: " + (int)(elapsed / 1000000), 0, 39);
+			g.drawString("Run. Avg. Overhead: " + (Math.round(avgElapsed/10000.0)/100.0), 0, 49);
+			g.drawString("Target Time: " + targetTime, 0, 59);
 			g.drawString("Press q to toggle between window mode and 'fast mode'.", 0, HEIGHT-1);
 		}
 	}
