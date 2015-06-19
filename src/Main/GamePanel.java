@@ -74,9 +74,9 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	long elapsed; // time between each frame draw
 	long avgElapsed = (long)(0); // resitant measure of time elapsed between each frame draw
 	
-	// print some simulation information
+	// print some simulation information ;; only works if run from a Java development environment
 	boolean extraInfo = false;
-	int updateFrequency = 2; // Updates come every (updateFrequency) seconds. Quite finicky.
+	int updateFrequency = 2; // Updates come every (updateFrequency) seconds. Can be quite finicky.
 	
 	// JFrame pointer
 	JFrame game;
@@ -270,6 +270,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			g.fillRect(0, 20, 80, 10);
 			g.fillRect(0, 30, 110, 10);
 			g.fillRect(0, 40, 80, 10);
+			g.fillRect(0, HEIGHT-10, 280, 10);
 			g.setColor(Color.BLACK);
 			Font font = g.getFont();
 			g.setFont(font.deriveFont(10.0f));
@@ -278,6 +279,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			g.drawString("Overhead: " + (int)(elapsed / 1000000), 0, 29);
 			g.drawString("Run. Avg. Overhead: " + avgElapsed, 0, 39);
 			g.drawString("Target Time: " + targetTime, 0, 49);
+			g.drawString("Press q to toggle between window mode and 'fast mode'.", 0, HEIGHT-1);
 		}
 	}
 	
@@ -307,7 +309,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		
 		//Option for switching between window and fast mode.
 		if (key.getKeyCode() == KeyEvent.VK_Q) {
-			System.out.println("window");
 			toggleWindow();
 		}
 	}
@@ -348,7 +349,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
      * Used to toggle the window between real time and run-everything-as-fast-as-possible-mode.
      */
     public void toggleWindow() {
-    	/*showWindow = !showWindow;
+    	showWindow = !showWindow;
     	if (showWindow) {
     		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
     		setFPS(windowFPSmultiplier*normalFPS);
@@ -356,10 +357,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
     		setPreferredSize(new Dimension(80, 50));
     		setFPS(fastFPSmultiplier*normalFPS);
     	}
-    	game.pack();*/
-    	System.out.println(con.cGen);
-    	con = new GController(this);
-    	
+    	game.pack();
     }
     
     /*

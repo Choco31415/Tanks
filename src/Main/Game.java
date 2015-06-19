@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 
 public class Game {
 
-	public static final boolean showWindow = false;
+	public static final boolean showWindow = true;
 	public static JFrame window;
 	
 	public static void main(String[] args) {

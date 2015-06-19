@@ -34,7 +34,7 @@ public class GController {
 	final double MaxPerturbation = 0.3;
 	final int hugeNumber = 99999; //Used in a few not very important places.
 	final boolean writerOn = true; //This variable controls if the genetic algorithm is being recorded or not. Can generate large files for huge search depths and huge N!
-	final int suppressLowest = 3; //Automatically removes the n weakest from the current generation. 0 to turn off. If set too high, can cause Nan fitnessScores.
+	final int suppressLowest = 1; //Automatically removes the n weakest from the current generation. 0 to turn off. If set too high, can cause Nan fitnessScores.
 	
 	public int cGen = 0; //Current Generation
 	
