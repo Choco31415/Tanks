@@ -10,6 +10,7 @@ import javax.swing.JFrame;
  * 
  */
 
+@SuppressWarnings({ "serial", "unused" })
 public class Game {
 
 	public static final boolean showWindow = true;
